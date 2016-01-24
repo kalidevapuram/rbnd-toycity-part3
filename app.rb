@@ -2,6 +2,7 @@ require_relative "lib/errors"
 require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
+require_relative "lib/return"
 # PRODUCTS
 
 Product.new(title: "LEGO Iron Man vs. Ultron", price: 22.99, stock: 55)
@@ -28,19 +29,19 @@ puts products_in_stock.include?(firehouse) # Should return false
 # 
 # # CUSTOMERS
 # 
-# Customer.new(name: "Walter Latimer")
-# Customer.new(name: "Julia Van Cleve")
+Customer.new(name: "Walter Latimer")
+Customer.new(name: "Julia Van Cleve")
+
+puts Customer.all.count # Should return 2
+
+Customer.new(name: "Walter Latimer")
+# Should return DuplicateCustomerError: 'Walter Latimer' already exists.
+
+walter = Customer.find_by_name("Walter Latimer")
+
+puts walter.name # Should return "Walter Latimer"
 # 
-# puts Customer.all.count # Should return 2
-# 
-# Customer.new(name: "Walter Latimer")
-# # Should return DuplicateCustomerError: 'Walter Latimer' already exists.
-# 
-# walter = Customer.find_by_name("Walter Latimer")
-# 
-# puts walter.name # Should return "Walter Latimer"
-# 
-# # TRANSACTIONS
+# TRANSACTIONS
 # 
 # transaction = Transaction.new(walter, nanoblock)
 # 
@@ -50,7 +51,7 @@ puts products_in_stock.include?(firehouse) # Should return false
 # puts transaction.customer == walter # Should return true
 # puts nanoblock.stock # Should return 11
 # 
-# # PURCHASES
+# PURCHASES
 # 
 # puts walter.purchase(nanoblock)
 # 
@@ -60,4 +61,31 @@ puts products_in_stock.include?(firehouse) # Should return false
 # puts transaction2.product == nanoblock # Should return true
 # 
 # walter.purchase(firehouse)
-# # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+# Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+# 
+# 
+# #Return 
+# puts "******Adding new features******"
+# puts nanoblock.stock #Should return 10
+# 
+# returns = Returns.new(nanoblock, walter)
+# 
+# transaction.returns(nanoblock, walter)
+# 
+# puts returns.customer == walter  # Should return true
+# puts returns.product == firehouse  # Should return false
+# puts Returns.all.count  #should return 1
+# puts nanoblock.stock #should return 11, beacuse walter returned nanoblock
+# 
+# #Exchange
+# 
+# ironman = Product.find_by_title("LEGO Iron Man vs. Ultron")
+# puts ironman.stock # Should return 55
+# Customer.new(name: "Bhargavi K")
+# bhargavi = Customer.find_by_name("Bhargavi K")
+# bhargavi.multi_purchase(product: "ironman", product: "ironman")
+# puts ironman.stock
+# 
+# 
+# 
+# 
