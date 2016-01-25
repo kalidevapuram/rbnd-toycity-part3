@@ -1,0 +1,22 @@
+How long did you spend working on this project?
+I nearly spent 7 hours to finish this project with the additional features.
+
+
+What was the most rewarding challenge you conquered?
+The most challenging parts are, 
+	1. Implementing the Error handling for this project,
+	2. How objects talk with other objects, 
+	3. creating a second transaction object in customer class. 
+
+
+What two additional features did you build? Why?
+I added some features
+	1.Returning a product
+	2.Exchanging a product
+	3.Displays the purchase date
+I created an additional features which uses daily in any store, returning and exchanging the products are mainly important.
+
+
+Where do you still have room to grow?
+Doing this type of project is really makes me to learn more about oops concepts and i got confidence on me. 
+Still i have to work on these kind of projects to get more in depth on subject. I have to know more about error handling and spent some time on reading ruby docs.
