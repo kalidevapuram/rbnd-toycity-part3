@@ -33,6 +33,7 @@ class Transaction
 	
 	private
 	def add_to_transactions
+	
 		@@transactions << self  #pushes every transaction into an array
 	end
 
