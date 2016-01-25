@@ -45,6 +45,7 @@ class Customer
 
 	private
 	def add_to_customers
+	
 		@@customers << self
 		#@@customers.each do |customer|   #entering into customers array loop
 #   		if customer.name == @name
