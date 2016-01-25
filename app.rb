@@ -2,6 +2,8 @@ require_relative "lib/errors"
 require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
+
+
 # PRODUCTS
 
 Product.new(title: "LEGO Iron Man vs. Ultron", price: 22.99, stock: 55)
@@ -49,4 +51,21 @@ puts transaction.product == nanoblock # Should return true
 puts transaction.product == firehouse # Should return false
 puts transaction.customer == walter # Should return true
 puts nanoblock.stock # Should return 11
+
+#PURCHASES
+
+puts walter.purchase(nanoblock)
+
+puts Transaction.all.count # Should return 2
+
+transaction2 = Transaction.find(2)
+puts transaction2.product == nanoblock # Should return true
+
+walter.purchase(firehouse)
+#Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+
+
+
+
 
