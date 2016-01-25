@@ -82,6 +82,12 @@ Customer.new(name: "Bhargavi K")
 bhargavi = Customer.find_by_name("Bhargavi K")
 
 puts bhargavi.purchase(ironman)
+puts transaction.purchase_date # should print date when the puchased
+puts ironman.stock # Should return 54
+
+bhargavi.exchange(ironman, nanoblock)
+puts ironman.stock # Should return 55
+puts nanoblock.stock #Should return 10
 
 
 
