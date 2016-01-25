@@ -17,6 +17,7 @@ I added some features
 I created an additional features which uses daily in any store, returning and exchanging the products are mainly important.
 
 
+
 Where do you still have room to grow?
 Doing this type of project is really makes me to learn more about oops concepts and i got confidence on me. 
 Still i have to work on these kind of projects to get more in depth on subject. I have to know more about error handling and spent some time on reading ruby docs.
