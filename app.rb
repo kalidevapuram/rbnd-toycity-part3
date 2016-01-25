@@ -51,7 +51,6 @@ puts transaction.product == nanoblock # Should return true
 puts transaction.product == firehouse # Should return false
 puts transaction.customer == walter # Should return true
 puts nanoblock.stock # Should return 11
-
 #PURCHASES
 
 puts walter.purchase(nanoblock)
@@ -63,6 +62,17 @@ puts transaction2.product == nanoblock # Should return true
 
 walter.purchase(firehouse)
 #Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+##**********Adding New Features**********
+
+##Return 
+puts "******Adding new features******"
+
+puts nanoblock.stock #Should return 10
+# Customer.returns(nanoblock, walter,1)
+walter.returns(nanoblock)
+
+puts nanoblock.stock #should return 11, beacuse walter returned nanoblock
 
 
 
