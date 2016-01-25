@@ -74,7 +74,14 @@ walter.returns(nanoblock)
 
 puts nanoblock.stock #should return 11, beacuse walter returned nanoblock
 
+##Exchange
 
+ironman = Product.find_by_title("LEGO Iron Man vs. Ultron")
+puts ironman.stock # Should return 55
+Customer.new(name: "Bhargavi K")
+bhargavi = Customer.find_by_name("Bhargavi K")
+
+puts bhargavi.purchase(ironman)
 
 
 
